@@ -4,6 +4,7 @@ import { useQuery } from '@apollo/client';
 import { GET_PROJECT } from '../queries/projectQueries';
 import ClientInfo from '../components/Client/ClientInfo';
 import DeleteProjectButton from '../components/Project/DeleteProjectButton';
+import EditProjectForm from '../components/Project/EditProjectForm';
 
 function Project() {
 
@@ -36,6 +37,8 @@ function Project() {
           <p className="lead">{ data.project.status}</p>
 
           <ClientInfo client={data.project.client } />
+
+          <EditProjectForm project={data.project} />
 
           <DeleteProjectButton projectId={data.project.id} />
         </div>
